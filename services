@@ -1,0 +1,22 @@
+# Run python with docker image
+docker run -it --entrypoint=bash python:3.12.8
+
+# Check pip version
+pip --version
+
+# Run posgres and pgadmin containers with docker-compose
+docker-compose up -d
+
+# Insert data into postgres through a python script
+python ingest_data.py \
+    --user=root \
+    --password=root \
+    --host=localhost \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_trips_name=green_taxi_data \
+    --url_trips=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz \
+    --url_zone=https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv \
+    --csv_trips_name=green_tripdata_2019-10.csv \
+    --table_zone_name=taxi_zone \
+    --filename_zone=taxi_zone_lookup.csv
