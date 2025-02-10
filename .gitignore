@@ -38,6 +38,9 @@ terraform.rc
 
 # Data files
 *.csv
+*.parquet
 
 # GCLOUD key
-./terraform/keys
+./01-docker-terraform/terraform/keys
+./03-data-warehouse-and-bigquery/gcloud-dw-key.json
+
