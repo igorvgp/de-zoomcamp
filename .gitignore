@@ -39,6 +39,7 @@ terraform.rc
 # Data files
 *.csv
 *.parquet
+*.duckdb
 
 # GCLOUD key
 ./01-docker-terraform/terraform/keys
